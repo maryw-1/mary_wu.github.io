@@ -1,23 +1,54 @@
 project:
   type: website
   output-dir: docs
-  
 
 website:
-  title: "mary_wu.github.io"
+  title: "Mary Wu"
   navbar:
     left:
       - href: index.qmd
-        text: Home
-      - about.qmd
+        text: "Home"
+      - file: US_States_and_Minimum_Wage.qmd
+        text: "Minimum Wage in the United States"
+      - file: Mini_Project_2_Simulations.qmd
+        text: "Mini Project 2 - Simulations"
+      - file: MNIST_Number_Classification.qmd
+        text: "MNIST Number Classification"
+      - file: collaborative_work.qmd
+        text: "Collaborative Work"
+      - file: other_works.qmd
+        text: "Other Works"
+
+      
+  sidebar:
+    - id: mini_projects
+      title: "Mini Project 1"
+      contents: 
+        - US_States_and_Minimum_Wage.qmd
+    - id: collaborative_work
+      title: "Collaborative Work"
+      contents: 
+        - nat_park.qmd
+    
+    
+
+  page-footer:
+    left: |
+      &copy; Mary Wu, 2026<br>
+      All content licensed under <i class='bi-badge-cc'></i>
+      [(CC BY-NC-SA 4.0)](http://creativecommons.org/licenses/by-nc-sa/4.0/)
+    right: |
+      Site built with <a href='https://quarto.org/'>Quarto</a>
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: cosmo
     css: styles.css
     toc: true
 
-editor: visual
+editor: source
 
+
+
+
+  

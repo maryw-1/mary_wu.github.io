@@ -1,0 +1,12 @@
+name: national_parks_shiny
+title: national_parks_shiny
+username: maryw
+account: maryw
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 17643377
+bundleId: 12324954
+url: https://maryw.shinyapps.io/national_parks_shiny/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

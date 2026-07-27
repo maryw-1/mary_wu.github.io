@@ -1,0 +1,9 @@
+---
+title: "Other Works"
+editor_options: 
+  chunk_output_type: console
+---
+
+### Advanced Computational Math:
+
+[Traveling Sales Person](https://acrobat.adobe.com/id/urn:aaid:sc:US:600160df-4f7e-4837-a2ec-30dd712a071d)

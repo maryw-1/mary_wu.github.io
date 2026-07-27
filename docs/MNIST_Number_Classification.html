@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Group 3 - Maheen Asim, Jonathan Emmick, and Mary Wu">
+<meta name="dcterms.date" content="2024-03-18">
+
+<title>ADM first challenge final report – Mary Wu</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-158031087360bce0ff56dc785ce39e06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Mary Wu</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./US_States_and_Minimum_Wage.html"> 
+<span class="menu-text">Minimum Wage in the United States</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./Mini_Project_2_Simulations.html"> 
+<span class="menu-text">Mini Project 2 - Simulations</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./MNIST_Number_Classification.html" aria-current="page"> 
+<span class="menu-text">MNIST Number Classification</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./collaborative_work.html"> 
+<span class="menu-text">Collaborative Work</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./other_works.html"> 
+<span class="menu-text">Other Works</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#image-dataset" id="toc-image-dataset" class="nav-link" data-scroll-target="#image-dataset">Image dataset</a></li>
+  <li><a href="#auxiliary-functions-part-1" id="toc-auxiliary-functions-part-1" class="nav-link" data-scroll-target="#auxiliary-functions-part-1">Auxiliary functions (part 1)</a></li>
+  <li><a href="#region-description" id="toc-region-description" class="nav-link" data-scroll-target="#region-description">Region description</a></li>
+  <li><a href="#auxiliary-functions-part-2" id="toc-auxiliary-functions-part-2" class="nav-link" data-scroll-target="#auxiliary-functions-part-2">Auxiliary functions (part 2)</a></li>
+  <li><a href="#feature-dataset" id="toc-feature-dataset" class="nav-link" data-scroll-target="#feature-dataset">Feature dataset</a></li>
+  <li><a href="#initial-plotting" id="toc-initial-plotting" class="nav-link" data-scroll-target="#initial-plotting">Initial plotting</a></li>
+  </ul></li>
+  <li><a href="#final-report" id="toc-final-report" class="nav-link" data-scroll-target="#final-report">Final report</a>
+  <ul class="collapse">
+  <li><a href="#trainingtesting-definition" id="toc-trainingtesting-definition" class="nav-link" data-scroll-target="#trainingtesting-definition">Training/Testing definition</a></li>
+  <li><a href="#model-creation-optimization-and-selection" id="toc-model-creation-optimization-and-selection" class="nav-link" data-scroll-target="#model-creation-optimization-and-selection">Model creation, optimization and selection</a></li>
+  <li><a href="#logistic-regression-model" id="toc-logistic-regression-model" class="nav-link" data-scroll-target="#logistic-regression-model">Logistic Regression Model</a></li>
+  <li><a href="#knn" id="toc-knn" class="nav-link" data-scroll-target="#knn">KNN</a></li>
+  <li><a href="#knn-accuracy-function-auxiliary-function" id="toc-knn-accuracy-function-auxiliary-function" class="nav-link" data-scroll-target="#knn-accuracy-function-auxiliary-function">KNN Accuracy function –auxiliary function</a></li>
+  <li><a href="#finding-k-optimal-value" id="toc-finding-k-optimal-value" class="nav-link" data-scroll-target="#finding-k-optimal-value">Finding K optimal value:</a></li>
+  <li><a href="#plot-showing-the-accuracies-of-as-optimal_k_tbl" id="toc-plot-showing-the-accuracies-of-as-optimal_k_tbl" class="nav-link" data-scroll-target="#plot-showing-the-accuracies-of-as-optimal_k_tbl">Plot showing the accuracies of as optimal_k_tbl</a></li>
+  <li><a href="#slice-max-accuracy-to-confirm-visualization-results" id="toc-slice-max-accuracy-to-confirm-visualization-results" class="nav-link" data-scroll-target="#slice-max-accuracy-to-confirm-visualization-results">Slice Max accuracy to confirm visualization results</a></li>
+  <li><a href="#building-knn-with-optimal-k-25" id="toc-building-knn-with-optimal-k-25" class="nav-link" data-scroll-target="#building-knn-with-optimal-k-25">Building KNN with optimal K = 25</a></li>
+  <li><a href="#confusion-matrix-for-knn-model" id="toc-confusion-matrix-for-knn-model" class="nav-link" data-scroll-target="#confusion-matrix-for-knn-model">Confusion Matrix for KNN model</a></li>
+  <li><a href="#checking-accuracy-of-individual-digits-the-proportion-of-correctly-classified-5s-and-7s." id="toc-checking-accuracy-of-individual-digits-the-proportion-of-correctly-classified-5s-and-7s." class="nav-link" data-scroll-target="#checking-accuracy-of-individual-digits-the-proportion-of-correctly-classified-5s-and-7s.">Checking accuracy of Individual digits: the proportion of correctly classified 5s and 7s.</a></li>
+  <li><a href="#decision-boundary" id="toc-decision-boundary" class="nav-link" data-scroll-target="#decision-boundary">Decision boundary</a></li>
+  <li><a href="#misclassifications" id="toc-misclassifications" class="nav-link" data-scroll-target="#misclassifications">Misclassifications</a></li>
+  <li><a href="#changing-things-up" id="toc-changing-things-up" class="nav-link" data-scroll-target="#changing-things-up">Changing things up</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">ADM first challenge final report</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Group 3 - Maheen Asim, Jonathan Emmick, and Mary Wu </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 18, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>In class we have gone through the process of a creating a classifier to distinguish a <code>2</code> from <code>7</code> by using some predefined features, which correspond to the proportion of <em>dark pixels</em> in different quadrants of an image. Is there a solid way to classify between the numbers? It might be easy to distinguish these two numbers if it were just one person’s handwriting. However, we want to create a classifier such that we are able to distinguish between these two numbers given a large set of handwritten numbers. With everyone having their own distinct way of writing, how are we able to create a general classification such that we are able to distinguish between the 10 numbers? We are interested in distinguishing between the digits of 5 and 7. To do this, we have to create a classifier, which distinguishes a 5 from 7 by using some predefined features, which corresponds to the proportion of dark pixels of an image. In this challenge we will be using the <code>mnist</code> dataset to create an end-to-end classifier that distinguishes between two digits 5 and 7.</p>
+<section id="image-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="image-dataset">Image dataset</h2>
+<p>We begin our analysis with importing the <code>mnist</code> dataset, which includes 60,000 rows, which corresponds to 60,000 different handwritten digits. However, this takes up a lot of memory, so we decided to include the first 1000 rows in our initial analysis. Note how we use the function <code>slide_head(n=1000)</code> to grab the first 1000 rows of the <code>mnist</code> dataset. We call this new dataset <code>mnist_5_7</code>.</p>
+<p>Our new dataset of <code>mnist5_7</code> has 1000 observations and 875 variables. The first variable, <code>digit</code>, corresponds to what number is represented. The rest of the columns, <code>V1:V784</code> correspond to the gray-scale values of each of the pixels from a 28 by 28 image.</p>
+</section>
+<section id="auxiliary-functions-part-1" class="level2">
+<h2 class="anchored" data-anchor-id="auxiliary-functions-part-1">Auxiliary functions (part 1)</h2>
+<p>We create a function that will allow us to visualize one of the rows of our dataset:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>plot_digit <span class="ot">&lt;-</span> <span class="cf">function</span>(row) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  digit_mat <span class="ot">&lt;-</span>  row <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="sc">-</span>digit)<span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.numeric</span>()<span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">matrix</span>(<span class="at">nrow =</span> <span class="dv">28</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">image</span>(digit_mat[,<span class="dv">28</span><span class="sc">:</span><span class="dv">1</span>])</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The function works by removing the first column (<code>digit</code>), then converting the row into a vector, and then into 28 by 28 matrix. Finally we use the <code>image()</code> function in R to plot the resulting (rotated) matrix. We use this function below to explore the images corresponding to the 16th, 12th, 30th and and 60th digit from our data set to understand the variations in the shape.:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pull</span>(mnist5_7[<span class="dv">16</span>,], digit) <span class="co"># First image of a 5 </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5
+Levels: 5 7</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_digit</span>(mnist5_7[<span class="dv">16</span>,])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pull</span>(mnist5_7[<span class="dv">12</span>,], digit) <span class="co"># First image of a 7</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7
+Levels: 5 7</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_digit</span>(mnist5_7[<span class="dv">12</span>,])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pull</span>(mnist5_7[<span class="dv">30</span>,], digit) <span class="co"># Second image of a 5</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5
+Levels: 5 7</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_digit</span>(mnist5_7[<span class="dv">30</span>,])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-3-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pull</span>(mnist5_7[<span class="dv">66</span>,], digit) <span class="co"># Second image of a 7</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 7
+Levels: 5 7</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_digit</span>(mnist5_7[<span class="dv">66</span>,])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-3-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="region-description" class="level2">
+<h2 class="anchored" data-anchor-id="region-description">Region description</h2>
+<p>A <strong>region</strong> of an image can be defined by a 28 by 28 matrix of 0s and 1s, which can be represented as a text file where the rows are separated by “,” and where columns occur in different lines. For our regions selection, we wanted to be more creative and at the same time efficient so to maximize the area covered by both our digits <code>5</code> and <code>7</code> but minimizing the overlap. For <code>region1</code>, which represents digit <code>5</code>, we’ve created a shape that intriguingly resembles the digit <code>7</code>. This is a creative approach on our side because while the digit <code>5</code> has a different structure, by using the negative space of <code>7</code> we’re effectively creating a complementary shape that does not overlap with the actual <code>7</code> digit. Whereas, For <code>region2</code>, representing digit <code>7</code> to take a staggered form that extends diagonally across the matrix we aimed at creating a boomerang looking shape or a staircase shape to cover the distinctive features of the digit <code>7</code>, like its horizontal line on the top and the angular line descending to the right. This pattern would occupy spaces that are less likely to be filled by the digit <code>5</code>, which typically has a horizontal line at the lower part and a curve at the top right. Hence, for <code>region2</code>, the selection ensures that the main structural elements of <code>7</code> are highlighted without encroaching on the areas where <code>5</code> would be prominent.</p>
+<p>Notice we are using <code>col_names=FALSE</code>, since <code>region1.csv</code> and <code>region2.csv</code> do not have column names.</p>
+</section>
+<section id="auxiliary-functions-part-2" class="level2">
+<h2 class="anchored" data-anchor-id="auxiliary-functions-part-2">Auxiliary functions (part 2)</h2>
+<p>Let’s define and use <code>plot_region</code> to see how this region looks. The function <code>plot_region</code> below is designed to visualize regions represented as binary matrices. It takes a single argument <code>tbl</code>, which is expected to be a table of values. Inside the function, this table is converted into a matrix and the values are multiplied by 128, suggesting that the binary 0 or 1 values in <code>tbl</code> are scaled up to create a grayscale image with pixel values of either 0 or 128. Then, the function <code>image</code> is used to display this matrix. However, before the matrix is passed to the <code>image</code> function, it is transposed using the <code>t()</code> function and then flipped along the vertical axis (as indicated by the <code>[28:1]</code> indexing), which effectively rotates the image for proper orientation. The purpose of this function is to plot the region of a digit from a 28 by 28 matrix, where the digit’s shape is represented in a format suitable for image display in R.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plot_region <span class="ot">&lt;-</span> <span class="cf">function</span>(tbl) {</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  digit_mat <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(tbl)<span class="sc">*</span><span class="dv">128</span> <span class="co"># Convert tbl into matrix and assign gray=128</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">image</span>(<span class="fu">t</span>(digit_mat)[,<span class="dv">28</span><span class="sc">:</span><span class="dv">1</span>]) <span class="co">#Plot the image making sure is rotated</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_region</span>(region1)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_region</span>(region2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Now, given an image and a <code>region</code>, we would like to calculate the proportion of dark pixels of the image in the <code>region</code>. We can do that using the function <code>calc_prop()</code>. The <code>calc_prop</code> function is designed to determine the proportion of dark pixels within a certain region of an image. It takes a predefined region matrix where the value 1 indicates the relevant region, and a row vector representing pixel data from an image. The region matrix is rotated and flipped to align with the MNIST dataset’s image orientation. Next, the row vector is converted into numerical form, if it isn’t already, and reshaped into a 28x28 pixel matrix that represents the image, known as <code>digit_mat</code>. The function then identifies which pixels fall within the specified region and assesses whether these pixels are dark based on a threshold value (greater than 20 out of 255 in grayscale). It counts the dark pixels and calculates their proportion within the selected region, which is then returned as the output. This method is generally useful in image processing tasks where the density of dark pixels within specific areas needs to be analyzed, such as in handwriting recognition here.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>calc_prop <span class="ot">&lt;-</span> <span class="cf">function</span> (region, row) {</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Rotate "region" so is in same order as mnist images</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  region <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">as.matrix</span>(region))[,<span class="dv">28</span><span class="sc">:</span><span class="dv">1</span>]</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Take row from mnist and transform into a "digit" matrix</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  digit_mat <span class="ot">&lt;-</span>  row <span class="sc">|&gt;</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">as.numeric</span>()<span class="sc">|&gt;</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">matrix</span>(<span class="at">nrow =</span> <span class="dv">28</span>)</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Find positions of pixels from "region"</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  pos <span class="ot">=</span> (region<span class="sc">==</span><span class="dv">1</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Subset "digit" to the positions and count dark pixels (grey&gt;20)</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  dark <span class="ot">=</span> digit_mat[pos]<span class="sc">&gt;</span><span class="dv">20</span> </span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Return proportion of dark pixels of "image" in "region"</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">sum</span>(dark)<span class="sc">/</span><span class="fu">sum</span>(pos))</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>And we can use this function to calculate the proportion of dark pixels for the first, 5th and 13th image. Notice how we subset <code>mnist5_7</code> tibble to a particular row, and only to the columns representing the pixels.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_prop</span>(region1, mnist5_7[<span class="dv">1</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">785</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.6341463</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_prop</span>(region1, mnist5_7[<span class="dv">5</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">785</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.2682927</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_prop</span>(region1, mnist5_7[<span class="dv">13</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">785</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3414634</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_prop</span>(region2, mnist5_7[<span class="dv">1</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">785</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1960784</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_prop</span>(region2, mnist5_7[<span class="dv">5</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">785</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1568627</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calc_prop</span>(region2, mnist5_7[<span class="dv">13</span>,<span class="dv">2</span><span class="sc">:</span><span class="dv">785</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.254902</code></pre>
+</div>
+</div>
+<p>We apply the function <code>calc_prop</code> to all the rows of a tibble by using <code>rowwise()</code>, combined with a <code>mutate</code> statement. Notice how inside the <code>mutate</code> command we use the <code>c_across()</code> to select the columns containing the pixel information. We do this for our both regions below:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># region 1</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>(tmp_tbl <span class="ot">&lt;-</span> mnist5_7<span class="sc">|&gt;</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>()<span class="sc">|&gt;</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">area1=</span><span class="fu">calc_prop</span>(region1,<span class="fu">c_across</span>(V1<span class="sc">:</span>V784))) <span class="sc">|&gt;</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(digit,area1))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 2
+# Rowwise: 
+   digit area1
+   &lt;fct&gt; &lt;dbl&gt;
+ 1 5     0.634
+ 2 5     0.146
+ 3 7     0.390
+ 4 7     0.317
+ 5 5     0.268
+ 6 7     0.366
+ 7 7     0.268
+ 8 5     0.683
+ 9 7     0.390
+10 5     0.293
+# ℹ 990 more rows</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># region 2</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>(tmp_tbl_2 <span class="ot">&lt;-</span> mnist5_7<span class="sc">|&gt;</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>()<span class="sc">|&gt;</span></span>
+<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">area2=</span><span class="fu">calc_prop</span>(region2,<span class="fu">c_across</span>(V1<span class="sc">:</span>V784))) <span class="sc">|&gt;</span></span>
+<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(digit,area2))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,000 × 2
+# Rowwise: 
+   digit area2
+   &lt;fct&gt; &lt;dbl&gt;
+ 1 5     0.196
+ 2 5     0.176
+ 3 7     0.392
+ 4 7     0.275
+ 5 5     0.157
+ 6 7     0.314
+ 7 7     0.176
+ 8 5     0.157
+ 9 7     0.451
+10 5     0.137
+# ℹ 990 more rows</code></pre>
+</div>
+</div>
+<p>Notice we can plot the proportion of dark pixels in <code>region1</code> and <code>region2</code> for each of the digit types it represents.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tmp_tbl, <span class="fu">aes</span>(<span class="at">x=</span>digit,<span class="at">y=</span>area1))<span class="sc">+</span> <span class="co">#5s</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tmp_tbl_2, <span class="fu">aes</span>(<span class="at">x=</span>digit,<span class="at">y=</span>area2))<span class="sc">+</span> <span class="co"># 7s</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-9-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="feature-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="feature-dataset">Feature dataset</h2>
+<p>We calculate the proportion of dark pixels across the two areas of interest (see section <code>The proportion of dark pixels ..</code>) using the mnist5_7 dataset and create a new tibble <code>features_tbl</code> that contains four columns: <code>id</code>, which is a consecutive number from 1 to 1000, <code>digit</code> which is a factor corresponding to our digit type, <code>prop1</code> which corresponds to the proportion of dark pixels for <code>region1</code>, and <code>prop2</code> which is the proportion of dark pixels for <code>region2</code>. The dataset is saved as <code>mnist5_7.features.csv</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>features_tbl <span class="ot">&lt;-</span> mnist5_7<span class="sc">|&gt;</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>()<span class="sc">|&gt;</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop1=</span><span class="fu">calc_prop</span>(region1,<span class="fu">c_across</span>(V1<span class="sc">:</span>V784)),</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">prop2=</span><span class="fu">calc_prop</span>(region2,<span class="fu">c_across</span>(V1<span class="sc">:</span>V784))) <span class="sc">|&gt;</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(digit,prop1, prop2) <span class="sc">|&gt;</span></span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">rowid_to_column</span>(<span class="st">"ID"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="initial-plotting" class="level2">
+<h2 class="anchored" data-anchor-id="initial-plotting">Initial plotting</h2>
+<p>The following code allows us to visualize the spread of values for “prop1” and “prop2” for the digits 5 and 7. We accomplish this by creating a ggplot using “features_tbl” as the data. Within this ggplot, we place the values of “prop1” on the x-axis and the values of “prop2” on the y-axis, and we use colors to differentiate the 5’s and 7’s. Finally, we use geom_point() to create a scatter plot of the data.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>features_tbl <span class="sc">|&gt;</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> prop1, <span class="at">y =</span> prop2, <span class="at">color =</span> digit)) <span class="sc">+</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The scatter plot visualizes two variables, <code>prop1</code> and <code>prop2</code>, which represent the proportion of dark pixels in the predefined regions for the digits <code>5</code> and <code>7</code>. The blue points represent 7, and the red points represent 5. The separation between the clusters of blue and red points suggests that <code>prop1</code> and <code>prop2</code> are effective features for differentiating between the two digit types. Most of the blue points (for 7) are grouped together, as are the red points (for the 5), with a relatively clear boundary between them. This clustering indicates a good level of distinction between the digit types based on these features, which will be hopefully advantageous when developing our models. However, there are some overlapping areas where red and blue points are mixed, indicating areas where the digit representations share similar proportions of dark pixels for 5’s and 7’s. As such, our models will likely have more difficulty classifying digits in these areas.</p>
+</section>
+</section>
+<section id="final-report" class="level1">
+<h1>Final report</h1>
+<p>Your final report should have all of the sections from your <em>checkpoint</em> report plus the following</p>
+<section id="trainingtesting-definition" class="level2">
+<h2 class="anchored" data-anchor-id="trainingtesting-definition">Training/Testing definition</h2>
+<p>Using your features dataset (see section <code>Feature Dataset</code>) create training/testing datasets. Your training should have 800 observations and your testing should have 200 observations.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Libraries</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tidymodels_prefer</span>(<span class="at">quiet =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Making sure the 'digit' column is a factor and only has levels 5 and 7</span></span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="co"># features_tbl$digit &lt;- factor(features_tbl$digit, levels = c(5, 7))</span></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>features_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(features_tbl, <span class="at">prop=</span><span class="fl">0.8</span>)</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>features_train_tbl <span class="ot">&lt;-</span> <span class="fu">training</span>(features_split)</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>features_test_tbl <span class="ot">&lt;-</span> <span class="fu">testing</span>(features_split)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="model-creation-optimization-and-selection" class="level2">
+<h2 class="anchored" data-anchor-id="model-creation-optimization-and-selection">Model creation, optimization and selection</h2>
+<p>Create at least two different models for distinguishing the two different digit types using your two defined features. If the models have parameters (for example the <code>k</code> in KNN) make sure to find the optimal values of the parameters. Calculate the accuracy of each model in your dataset, select the model with the highest accuracy, and calculate the confusion matrix for the model with the highest accuracy</p>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>We’ve chosen two contrasting models: K-Nearest Neighbors (KNN) and Logistic Regression. The rationale for this choice lies in the complementary nature of the decision boundaries that each model constructs.KNN makes custom-fit decisions by closely examining its nearest data points. Its ability to capture the nuanced, subtle patterns in the dataset by considering the proximity of its neighbors makes it an excellent candidate for when the relationships within the data are complex and interwoven. Logistic Regression, on the other hand, takes on the role of a cartographer, drawing straight-line boundaries to divide the dataset into classes. Its strength lies in its straightforward approach, making it ideal for situations where a linear relationship does a good job of separating the classes. Choosing these two models allows us to explore and understand our dataset from two different perspectives: one that is intricately detailed and another that is elegantly straightforward. By comparing their performance, we hope to gain a deeper insight into the nature of our data and can make a more informed decision on which model best captures the underlying relationships between our variables.</p>
+</blockquote>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>The following code creates our multinomial logistic regression model. The model attempts to classify the digit based on the values of prop1 and prop2, and it is trained on the training data we created in the previous section. After creating the model, we also have code that tests the accuracy of the model, including the overall accuracy as well as the individual accuracies for 5’s and 7’s.</p>
+</blockquote>
+</blockquote>
+</section>
+<section id="logistic-regression-model" class="level2">
+<h2 class="anchored" data-anchor-id="logistic-regression-model">Logistic Regression Model</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating the model</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"glmnet"</span>)</span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>logit_spec <span class="ot">&lt;-</span> <span class="fu">multinom_reg</span>(<span class="at">mode =</span> <span class="st">"classification"</span>,</span>
+<span id="cb38-6"><a href="#cb38-6" aria-hidden="true" tabindex="-1"></a>                            <span class="at">engine =</span> <span class="st">"nnet"</span>)</span>
+<span id="cb38-7"><a href="#cb38-7" aria-hidden="true" tabindex="-1"></a>logit_recipe <span class="ot">&lt;-</span> <span class="fu">recipe</span>(digit <span class="sc">~</span> prop1 <span class="sc">+</span> prop2,</span>
+<span id="cb38-8"><a href="#cb38-8" aria-hidden="true" tabindex="-1"></a>                         <span class="at">data=</span>features_train_tbl)</span>
+<span id="cb38-9"><a href="#cb38-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-10"><a href="#cb38-10" aria-hidden="true" tabindex="-1"></a>logit_wflow <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">|&gt;</span></span>
+<span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_recipe</span>(logit_recipe) <span class="sc">|&gt;</span></span>
+<span id="cb38-12"><a href="#cb38-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_model</span>(logit_spec) </span>
+<span id="cb38-13"><a href="#cb38-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-14"><a href="#cb38-14" aria-hidden="true" tabindex="-1"></a>logit_model <span class="ot">&lt;-</span> <span class="fu">fit</span>(logit_wflow, features_train_tbl)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>After we created the model, we were interested in finding out how accurate our model is. We augmented our <code>logit_model</code>, which will give us the predictions of classifiying the digit as either a 5 or a 7.</p>
+</blockquote>
+</blockquote>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating the overall accuracy</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(logit_model, features_test_tbl) <span class="sc">|&gt;</span></span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">accuracy</span>(<span class="at">truth =</span> digit, <span class="at">estimate =</span> .pred_class)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 3
+  .metric  .estimator .estimate
+  &lt;chr&gt;    &lt;chr&gt;          &lt;dbl&gt;
+1 accuracy binary         0.875</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating the accuracy for 5's</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(logit_model, features_test_tbl) <span class="sc">|&gt;</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(digit<span class="sc">==</span><span class="dv">5</span>) <span class="sc">|&gt;</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(.pred_class) <span class="sc">|&gt;</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">freq =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  .pred_class     n  freq
+  &lt;fct&gt;       &lt;int&gt; &lt;dbl&gt;
+1 5              74 0.841
+2 7              14 0.159</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculating the accuracy for 7's</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(logit_model, features_test_tbl) <span class="sc">|&gt;</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(digit<span class="sc">==</span><span class="dv">7</span>) <span class="sc">|&gt;</span></span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(.pred_class) <span class="sc">|&gt;</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">freq =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  .pred_class     n   freq
+  &lt;fct&gt;       &lt;int&gt;  &lt;dbl&gt;
+1 5              11 0.0982
+2 7             101 0.902 </code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>Our logistic regression model has an overall accuracy of 87.5% when applied to the testing data. When breaking this accuracy down by digit, we see that our model has 84.1% accuracy for 5’s and 90.2% accuracy for 7’s.</p>
+</blockquote>
+</blockquote>
+</section>
+<section id="knn" class="level2">
+<h2 class="anchored" data-anchor-id="knn">KNN</h2>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>For our second model we developed a K-Nearest Neighbors (KNN) classification model using auxiliary functions and the determination of the optimal number of neighbors (K) to ensure the best possible model accuracy. Firstly, we established auxiliary functions that allow us to generate and assess the KNN model systematically. The <code>create_knn</code> function is designed to take in a specified number of neighbors (K) and a dataset, using these parameters to build a KNN model for classification purposes by we specifying the KNN algorithm, the mode of the model (classification), and the formula that describes the relationship between predictors and outcome <code>digit</code> here. A function named <code>calc_accuracy</code>, which serves to evaluate the performance of our KNN model. It predicts the classes for a given dataset and then compares these predictions to the true labels to calculate the accuracy of the model. The following code creates a KNN model.</p>
+</blockquote>
+</blockquote>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co">#KNN model generalized</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Creates a KNN classification model</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>create_knn <span class="ot">&lt;-</span> <span class="cf">function</span>(k, tbl) {</span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  knn_spec <span class="ot">&lt;-</span> <span class="fu">nearest_neighbor</span>(<span class="at">neighbors =</span> k) <span class="sc">%&gt;%</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set_mode</span>(<span class="st">"classification"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set_engine</span>(<span class="st">"kknn"</span>)</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  knn_recipe <span class="ot">&lt;-</span> <span class="fu">recipe</span>(digit <span class="sc">~</span> prop1 <span class="sc">+</span> prop2, <span class="at">data=</span>tbl)</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>  knn_wflow <span class="ot">&lt;-</span> <span class="fu">workflow</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">add_recipe</span>(knn_recipe) <span class="sc">%&gt;%</span></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">add_model</span>(knn_spec)</span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a>  knn_model <span class="ot">&lt;-</span> <span class="fu">fit</span>(knn_wflow, tbl)</span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(knn_model)</span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="knn-accuracy-function-auxiliary-function" class="level2">
+<h2 class="anchored" data-anchor-id="knn-accuracy-function-auxiliary-function">KNN Accuracy function –auxiliary function</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>calc_accuracy <span class="ot">&lt;-</span> <span class="cf">function</span>(knn_model, tbl) {</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  predictions <span class="ot">&lt;-</span> <span class="fu">predict</span>(knn_model, tbl)<span class="sc">$</span>.pred_class</span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  true_labels <span class="ot">&lt;-</span> tbl<span class="sc">$</span>digit</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mean</span>(predictions <span class="sc">==</span> true_labels)</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>In order to identify the optimal number of neighbors, we utilized a loop that iterates through a range of K values from 1 to 210 with a difference of 4. For each iteration, we generate a KNN model using our <code>create_knn</code> function and then compute its accuracy on a test dataset using the <code>calc_accuracy</code> function. The results are collected in a table that maps each K value to its corresponding accuracy.</p>
+</blockquote>
+</blockquote>
+</section>
+<section id="finding-k-optimal-value" class="level2">
+<h2 class="anchored" data-anchor-id="finding-k-optimal-value">Finding K optimal value:</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>optimal_k_tbl <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">knear=</span><span class="fu">numeric</span>(),<span class="at">acc=</span><span class="fu">numeric</span>())</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co"># keeping difference of 4 from 1-210 optimal values.               </span></span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (k <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">210</span>,<span class="dv">4</span>)) {</span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>  knn_model <span class="ot">&lt;-</span> <span class="fu">create_knn</span>(k, features_train_tbl)</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>  optimal_k_tbl <span class="ot">&lt;-</span> optimal_k_tbl <span class="sc">%&gt;%</span></span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">add_row</span>(<span class="at">knear=</span>k, </span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">acc=</span><span class="fu">calc_accuracy</span>(knn_model, features_test_tbl))</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>optimal_k_tbl</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 53 × 2
+   knear   acc
+   &lt;dbl&gt; &lt;dbl&gt;
+ 1     1 0.83 
+ 2     5 0.87 
+ 3     9 0.89 
+ 4    13 0.895
+ 5    17 0.9  
+ 6    21 0.92 
+ 7    25 0.92 
+ 8    29 0.92 
+ 9    33 0.92 
+10    37 0.92 
+# ℹ 43 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="plot-showing-the-accuracies-of-as-optimal_k_tbl" class="level2">
+<h2 class="anchored" data-anchor-id="plot-showing-the-accuracies-of-as-optimal_k_tbl">Plot showing the accuracies of as optimal_k_tbl</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>optimal_k_tbl <span class="sc">|&gt;</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(knear,acc))<span class="sc">+</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>From the plot our optimal K is at many points such as 25, 29, 33 and 37 with accuracy of approximately 92%. To pinpoint the most suitable K value within this high-performing range, we employed the <code>slice_max</code> function, which extracts the rows associated with the maximum accuracy below.</p>
+</blockquote>
+</blockquote>
+</section>
+<section id="slice-max-accuracy-to-confirm-visualization-results" class="level2">
+<h2 class="anchored" data-anchor-id="slice-max-accuracy-to-confirm-visualization-results">Slice Max accuracy to confirm visualization results</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>optimal_k_tbl<span class="sc">|&gt;</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(acc,<span class="at">n=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 2
+   knear   acc
+   &lt;dbl&gt; &lt;dbl&gt;
+ 1    21  0.92
+ 2    25  0.92
+ 3    29  0.92
+ 4    33  0.92
+ 5    37  0.92
+ 6    41  0.92
+ 7    45  0.92
+ 8    49  0.92
+ 9    57  0.92
+10    61  0.92</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>The output confirmed that there are several K values tied for the highest accuracy, indicating that our model is robust to a range of neighbor values.</p>
+</blockquote>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>The K-Nearest Neighbors (KNN) model, demonstrating a superior accuracy rate of 92%, outperforms the Logistic Regression model, which has an accuracy of 87.5%. Consequently, based on its higher predictive accuracy, the KNN model is selected as the preferred algorithm for our classification task.</p>
+</blockquote>
+</blockquote>
+</section>
+<section id="building-knn-with-optimal-k-25" class="level2">
+<h2 class="anchored" data-anchor-id="building-knn-with-optimal-k-25">Building KNN with optimal K = 25</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating  KNN model for 25 and calculate the confusion matrix</span></span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>k_optimal <span class="ot">=</span> <span class="dv">25</span></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>knn <span class="ot">&lt;-</span> <span class="fu">create_knn</span>(k_optimal, features_train_tbl)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="confusion-matrix-for-knn-model" class="level2">
+<h2 class="anchored" data-anchor-id="confusion-matrix-for-knn-model">Confusion Matrix for KNN model</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(knn, features_test_tbl) <span class="sc">%&gt;%</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">conf_mat</span>(digit, .pred_class)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          Truth
+Prediction   5   7
+         5  79   7
+         7   9 105</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>The confusion matrix provides a detailed account of the K-Nearest Neighbors model’s classification accuracy for two classes of digits <code>5</code> and <code>7</code>. The diagonal values (79 for ‘5’ and 105 for ‘7’) represent the number of times the model correctly predicted the true class. The off-diagonal values show the misclassifications. For the class labeled ‘5’, the model correctly predicted ‘5’ a total of 79 times and the model incorrectly predicted ‘7’ when it was actually ‘5’ a total of 7 times. Similarly, for the class labeled ‘7’, the model incorrectly predicted ‘5’ when it was actually ‘7’ a total of 9 times and the model correctly predicted ‘7’ a total of 105 times.</p>
+</blockquote>
+</blockquote>
+</section>
+<section id="checking-accuracy-of-individual-digits-the-proportion-of-correctly-classified-5s-and-7s." class="level2">
+<h2 class="anchored" data-anchor-id="checking-accuracy-of-individual-digits-the-proportion-of-correctly-classified-5s-and-7s.">Checking accuracy of Individual digits: the proportion of correctly classified 5s and 7s.</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(knn, features_test_tbl) <span class="sc">|&gt;</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(digit<span class="sc">==</span><span class="dv">5</span>) <span class="sc">|&gt;</span></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(.pred_class) <span class="sc">|&gt;</span></span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">freq =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  .pred_class     n  freq
+  &lt;fct&gt;       &lt;int&gt; &lt;dbl&gt;
+1 5              79 0.898
+2 7               9 0.102</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(knn, features_test_tbl) <span class="sc">|&gt;</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(digit<span class="sc">==</span><span class="dv">7</span>) <span class="sc">|&gt;</span></span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(.pred_class) <span class="sc">|&gt;</span></span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">freq =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 3
+  .pred_class     n   freq
+  &lt;fct&gt;       &lt;int&gt;  &lt;dbl&gt;
+1 5               7 0.0625
+2 7             105 0.938 </code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>When considering the accuracy of individual digits using our model, we notice that the model has 89.8% accuracy for 5’s and 93.8% accuracy for 7’s.</p>
+</blockquote>
+</blockquote>
+</section>
+<section id="decision-boundary" class="level2">
+<h2 class="anchored" data-anchor-id="decision-boundary">Decision boundary</h2>
+<p>Plot your model predictions across a grid in <code>prop1</code> and <code>prop2</code> using <code>geom_raster()</code></p>
+<p>##Plotting our KNN Model Across a Grid</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the two sequences so we are able to expand grid</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>prop1 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.05</span>)</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>prop2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="fl">0.05</span>)</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Expand prop1 and prop2</span></span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>grid_tbl <span class="ot">&lt;-</span> <span class="fu">expand_grid</span>(prop1, prop2)</span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a>decision_KNN <span class="ot">&lt;-</span> <span class="fu">augment</span>(knn, grid_tbl)</span>
+<span id="cb59-9"><a href="#cb59-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-10"><a href="#cb59-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(decision_KNN, <span class="fu">aes</span>(prop1, prop2, <span class="at">fill =</span> .pred_class)) <span class="sc">+</span></span>
+<span id="cb59-11"><a href="#cb59-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>() <span class="sc">+</span></span>
+<span id="cb59-12"><a href="#cb59-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete</span>() <span class="sc">+</span> </span>
+<span id="cb59-13"><a href="#cb59-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"KNN Model"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>From our confusion matrix, we know that the digit 5 gets classified correctly 79 times, and the digit gets classified correctly 105 times. In the model above, the upper right hand corner represents the predicted class of 7, while the rest of the model represents the predicted class of 5. It seems like as we increase the proportion of dark pixels (in both the x and y axis), the model more accurately classifies the digit as 5. If we only increase the proportion of dark pixels in the y-axis, our classifer more successfully classifies the digit 7 more accurately.</p>
+</blockquote>
+</blockquote>
+</section>
+<section id="misclassifications" class="level2">
+<h2 class="anchored" data-anchor-id="misclassifications">Misclassifications</h2>
+<p>With any model, there are always misclassifications. Let us calculate and plot some of the misclassified digits. Here, we plotted two misclassified digits for each of the classes, for a total of 4 plots.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Finding two missclassified 5's and two missclassified 7's </span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>missed_fives <span class="ot">&lt;-</span> <span class="fu">augment</span>(knn, features_test_tbl) <span class="sc">|&gt;</span></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(digit <span class="sc">==</span> <span class="st">"5"</span> <span class="sc">&amp;</span> .pred_class <span class="sc">==</span> <span class="st">"7"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">2</span>)</span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>missed_fives</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 7
+  .pred_class .pred_5 .pred_7    ID digit prop1 prop2
+  &lt;fct&gt;         &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt; &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 7             0.398   0.602   530 5     0.268 0.176
+2 7             0.243   0.757   542 5     0.293 0.235</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>missed_sevens <span class="ot">&lt;-</span> <span class="fu">augment</span>(knn, features_test_tbl) <span class="sc">|&gt;</span></span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(digit <span class="sc">==</span> <span class="st">"7"</span> <span class="sc">&amp;</span> .pred_class <span class="sc">==</span> <span class="st">"5"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">2</span>)</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>missed_sevens</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 7
+  .pred_class .pred_5 .pred_7    ID digit prop1 prop2
+  &lt;fct&gt;         &lt;dbl&gt;   &lt;dbl&gt; &lt;int&gt; &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 5             0.898   0.102    35 7     0.341 0.118
+2 5             0.787   0.213   228 7     0.195 0.157</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting the two missclassified 5's and the two missclassified 7's</span></span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_digit</span>(mnist5_7[<span class="dv">530</span>,])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_digit</span>(mnist5_7[<span class="dv">542</span>,])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-25-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_digit</span>(mnist5_7[<span class="dv">35</span>,])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-25-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_digit</span>(mnist5_7[<span class="dv">228</span>,])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-25-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>The first missclassified 5 had a prop1 value of 0.268 and a prop2 value of 0.176, with a 39.8% chance of being a 5 and a 60.2% chance of being a 7. The second missclassified 5 had a prop1 value of 0.293 and a prop2 value of 0.235, with a 20.3% chance of being a 5 and a 79.7% chance of being a 7.</p>
+</blockquote>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>The first digit of 5 got missclassified because we missed the handwritten region completely. Our predetermined region1 starts at the point 0.8; however, this particular individual’s five started at around 0.7. Even the diagional portion in our region1 did not capture the dark regions of the handwritten 5.</p>
+</blockquote>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>The second digit of 5 got misclassified because we only captured the top portion of the handwritten 5. In general, it seems like a lot of 5’s gets missclassified as 7’s because our region1 closely resembles the top portion of 7’s.</p>
+</blockquote>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>The first missclassified 7 had a prop1 value of 0.341 and a prop2 value of 0.118, with an 89.8% chance of being a 5 and a 10.2% chance of being a 7. The second missclassified 7 had a prop1 value of 0.195 and a prop2 value of 0.157 with a 78.7% chance of being a 5 and a 21.3% chance of being a 7.</p>
+</blockquote>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>The first digit of 7 got missclassified because our region2 completely missed the dark pixels of the handwritten 7. We tried to capture as many variations of the bottom portion of 7’s; however, we did not account for an individual to write in the middle.</p>
+</blockquote>
+</blockquote>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>The second digit of 7 got missclassified because we did not account for an individual to have a dash in the middle of the 7.</p>
+</blockquote>
+</blockquote>
+</section>
+<section id="changing-things-up" class="level2">
+<h2 class="anchored" data-anchor-id="changing-things-up">Changing things up</h2>
+<ul>
+<li><p>Pull 500 digit <code>6s</code> from <code>mnist</code> and add them to your image dataset. Save the dataset in your project folder as <code>mnistX_Y_6.csv</code> (X and Y are your assigned digits)</p></li>
+<li><p>Calculate <code>prop_1</code> and <code>prop_2</code> on the new previous dataset, and create/save a new dataset as <code>mnist_X_Y_6.features.csv</code> in your project folder. Your dataset should have 4 columns (<code>id</code>, <code>digit</code>, <code>prop1</code> and <code>prop2</code>)</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>mnist_5_7_6_features <span class="ot">&lt;-</span> mnist5_7_6 <span class="sc">|&gt;</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rowwise</span>() <span class="sc">|&gt;</span></span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop1 =</span> <span class="fu">calc_prop</span>(region1, <span class="fu">c_across</span>(V1<span class="sc">:</span>V784)),</span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">prop2 =</span> <span class="fu">calc_prop</span>(region2, <span class="fu">c_across</span>(V1<span class="sc">:</span>V784))) <span class="sc">|&gt;</span></span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(digit, prop1, prop2) <span class="sc">|&gt;</span></span>
+<span id="cb68-7"><a href="#cb68-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span></span>
+<span id="cb68-8"><a href="#cb68-8" aria-hidden="true" tabindex="-1"></a>  tibble<span class="sc">::</span><span class="fu">rowid_to_column</span>(<span class="st">"ID"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Split the previous dataset into training/testing datasets. Your training should have 1200 observations and your testing should have 300 observations.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb69-4"><a href="#cb69-4" aria-hidden="true" tabindex="-1"></a>new_features_split <span class="ot">&lt;-</span> <span class="fu">initial_split</span>(mnist_5_7_6_features, <span class="at">prop =</span> <span class="fl">0.8</span>)</span>
+<span id="cb69-5"><a href="#cb69-5" aria-hidden="true" tabindex="-1"></a>new_features_train <span class="ot">&lt;-</span> <span class="fu">training</span>(new_features_split)</span>
+<span id="cb69-6"><a href="#cb69-6" aria-hidden="true" tabindex="-1"></a>new_features_test <span class="ot">&lt;-</span> <span class="fu">testing</span>(new_features_split)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Re-train the model you selected in <code>Model Creation, optimization,...</code> using the new training dataset.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>new_features_train<span class="sc">$</span>digit <span class="ot">&lt;-</span> <span class="fu">factor</span>(new_features_train<span class="sc">$</span>digit, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">6</span>))</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>new_features_test<span class="sc">$</span>digit <span class="ot">&lt;-</span> <span class="fu">factor</span>(new_features_test<span class="sc">$</span>digit, <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">5</span>,<span class="dv">7</span>,<span class="dv">6</span>))</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>optimal_k_tbl2 <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">knear =</span> <span class="fu">numeric</span>(), <span class="at">acc =</span> <span class="fu">numeric</span>())</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (k <span class="cf">in</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">210</span>,<span class="dv">4</span>)) {</span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a>  knn_model <span class="ot">&lt;-</span> <span class="fu">create_knn</span>(k, new_features_train)</span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a>  optimal_k_tbl2 <span class="ot">&lt;-</span> optimal_k_tbl2 <span class="sc">%&gt;%</span></span>
+<span id="cb70-9"><a href="#cb70-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">add_row</span>(<span class="at">knear=</span>k, </span>
+<span id="cb70-10"><a href="#cb70-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">acc=</span><span class="fu">calc_accuracy</span>(knn_model, new_features_test))</span>
+<span id="cb70-11"><a href="#cb70-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb70-12"><a href="#cb70-12" aria-hidden="true" tabindex="-1"></a>optimal_k_tbl2</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 53 × 2
+   knear   acc
+   &lt;dbl&gt; &lt;dbl&gt;
+ 1     1 0.497
+ 2     5 0.557
+ 3     9 0.573
+ 4    13 0.593
+ 5    17 0.603
+ 6    21 0.593
+ 7    25 0.587
+ 8    29 0.587
+ 9    33 0.583
+10    37 0.577
+# ℹ 43 more rows</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>optimal_k_tbl2 <span class="sc">|&gt;</span></span>
+<span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(knear, acc)) <span class="sc">+</span></span>
+<span id="cb72-3"><a href="#cb72-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb72-4"><a href="#cb72-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>optimal_k_tbl2 <span class="sc">|&gt;</span></span>
+<span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice_max</span>(acc, <span class="at">n =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  knear   acc
+  &lt;dbl&gt; &lt;dbl&gt;
+1    17 0.603</code></pre>
+</div>
+</div>
+<ul>
+<li>Calculate the accuracy of your retrained model on the new testing dataset. Calculate the confusion matrix of your model and comment on what digits seem to get confused more and why.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>knn_conf2 <span class="ot">&lt;-</span> <span class="fu">create_knn</span>(<span class="dv">13</span>, new_features_train)</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(knn_conf2, new_features_test) <span class="sc">|&gt;</span></span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(digit <span class="sc">==</span> <span class="dv">5</span>) <span class="sc">|&gt;</span></span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(.pred_class) <span class="sc">|&gt;</span></span>
+<span id="cb75-6"><a href="#cb75-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">freq =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  .pred_class     n  freq
+  &lt;fct&gt;       &lt;int&gt; &lt;dbl&gt;
+1 5              57 0.640
+2 7              10 0.112
+3 6              22 0.247</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(knn_conf2, new_features_test) <span class="sc">|&gt;</span></span>
+<span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(digit <span class="sc">==</span> <span class="dv">7</span>) <span class="sc">|&gt;</span></span>
+<span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(.pred_class) <span class="sc">|&gt;</span></span>
+<span id="cb77-4"><a href="#cb77-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">freq =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  .pred_class     n   freq
+  &lt;fct&gt;       &lt;int&gt;  &lt;dbl&gt;
+1 5               9 0.0833
+2 7              77 0.713 
+3 6              22 0.204 </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(knn_conf2, new_features_test) <span class="sc">|&gt;</span></span>
+<span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(digit <span class="sc">==</span> <span class="dv">6</span>) <span class="sc">|&gt;</span></span>
+<span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(.pred_class) <span class="sc">|&gt;</span></span>
+<span id="cb79-4"><a href="#cb79-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">freq =</span> n<span class="sc">/</span><span class="fu">sum</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  .pred_class     n  freq
+  &lt;fct&gt;       &lt;int&gt; &lt;dbl&gt;
+1 5              24 0.233
+2 7              35 0.340
+3 6              44 0.427</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="fu">augment</span>(knn_conf2, new_features_test) <span class="sc">|&gt;</span></span>
+<span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">conf_mat</span>(digit, .pred_class)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>          Truth
+Prediction  5  7  6
+         5 57  9 24
+         7 10 77 35
+         6 22 22 44</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>The accuracy of this retrained model is 60%, with 64% accuracy for 5’s, 75% accuracy for 7’s, and 42.7% accuracy for 6’s. The confusion matrix for the (KNN) prediction of digits 5, 6, and 7 above suggests that there is a notable level of confusion between the digits 5 and 6. The model has misclassified the digit 5 as 6 a total of 24 times, and similarly, the digit 6 as 5 a total of 24 times, which is the highest off-diagonal count observed in the matrix. This pattern of confusion could potentially be attributed to the similar shapes and strokes involved in writing these two digits. For instance, both digits have a round component—the lower half of ‘5’ and 6’. When written quickly or with a particular style, the distinction between the two can become blurred. Additionally, the top part of a ‘5’ can sometimes resemble the loop of a ‘6’, especially if the ‘5’ is not properly closed or the ‘6’ is loosely written. Also, it is worth noting that 6’s tend to get misclassified more often than either 5’s or 7’s. This is because 6’s are often misclassified as either 5’s or 7’s, while 5’s are not often misclassified as 7’s and 7’s are not often misclassified as 5’s. This is likely because we were not considering 6’s when creating our regions and were instead aiming to create regions that would distinguish between 5’s and 7’s well (which the new model still appears to do fairly well).</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<ul>
+<li>Plot the decision boundary for your model.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a>decision_KNN2 <span class="ot">&lt;-</span> <span class="fu">augment</span>(knn_conf2, grid_tbl)</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(decision_KNN2, <span class="fu">aes</span>(prop1, prop2, <span class="at">fill =</span> .pred_class)) <span class="sc">+</span></span>
+<span id="cb83-4"><a href="#cb83-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_raster</span>() <span class="sc">+</span></span>
+<span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_discrete</span>() <span class="sc">+</span></span>
+<span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"KNN Model with 6 included"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="MNIST_Number_Classification_files/figure-html/unnamed-chunk-31-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<blockquote class="blockquote">
+<p>When we included the digit 6 into our classifier, it changed the predicted class regions completely. The predicted class of 5 has three distinct regions, one in the lower left hand corner, one near the middle, and another region on the lower right hand side. While the predicted class of 7 only has one distinct regions, which is in the middle left hand side. The most distinct region is the digit 6, which takes up the majority of the grid.</p>
+</blockquote>
+</blockquote>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>© Mary Wu, 2026<br> All content licensed under <i class="bi-badge-cc"></i> <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">(CC BY-NC-SA 4.0)</a></p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Site built with <a href="https://quarto.org/">Quarto</a></p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

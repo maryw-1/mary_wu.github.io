@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Mary Wu</title>
+<title>Mini Project: Simulations – Mary Wu</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -37,6 +72,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -74,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -92,7 +128,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -100,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Minimum Wage in the United States</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Mini_Project_2_Simulations.html"> 
+    <a class="nav-link active" href="./Mini_Project_2_Simulations.html" aria-current="page"> 
 <span class="menu-text">Mini Project 2 - Simulations</span></a>
   </li>  
   <li class="nav-item">
@@ -126,50 +162,157 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#citations" id="toc-citations" class="nav-link" data-scroll-target="#citations">Citations</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-
-
-
-<div class="quarto-about-jolla">
-  <img src="profilepicture.jpg" class="about-image
-  round " style="height: 15em; width: 15em;">
- <header id="title-block-header" class="quarto-title-block"></header><div id="intro-heading">
-<section id="mary-wu" class="level2">
-<h2 data-anchor-id="mary-wu">Mary Wu</h2>
-<section id="education" class="level3">
-<h3 data-anchor-id="education">Education</h3>
-<p>MS in Biostatistics 2028 | University of Illinois Chicago</p>
-<p>BA in Mathematics 2024 | St.&nbsp;Olaf College</p>
-</section>
-</section>
-</div> 
-  <hr class="about-sep">
-   <div class="about-links">
-  <a href="https://www.linkedin.com/in/mary-w-7302a4284/" class="about-link" rel="" target="">
-     <span class="about-link-text">LinkedIn</span>
-  </a>
-  <a href="https://github.com/maryw-1" class="about-link" rel="" target="">
-     <span class="about-link-text">GitHub</span>
-  </a>
-  <a href="mailto:mwu71@uic.edu" class="about-link" rel="" target="">
-     <span class="about-link-text">Email</span>
-  </a>
-  <a href="https://acrobat.adobe.com/id/urn:aaid:sc:US:637617da-785a-42b3-aed5-7ad604410c29" class="about-link" rel="" target="">
-     <span class="about-link-text">Resume</span>
-  </a>
-</div>
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Mini Project: Simulations</h1>
 </div>
 
 
 
+<div class="quarto-title-meta">
 
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>We are interested in seeing if gas prices changed over time. Since the worlds economy is ever changing, I thought it would be interesting to analyze gas prices. Living in the United States, we only hear about the outrages gas prices within the states; however, how are other countries dealing with such changes, if there are any to begin with. I was curious to see if the changing gas prices were that drastic as well. We begin by importing the Ontario gas prices dataset. I wanted to explore how gas prices vary within a two very different regions of the same city. Here, my analysis involves the difference of two means. So I tidied my dataset such that the column <code>date</code> was a binary variable, which took on the values of “yes” or “no”, representing if the observation year was <code>pre_2010</code> or not.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#initial data cleaning</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>ontario_gas <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"~/Desktop/SDSProjects/mary_wu.github.io/Ontario_Fuel_Prices_1990_2023.csv"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Date, <span class="st">`</span><span class="at">Toronto West/Ouest</span><span class="st">`</span>, <span class="st">`</span><span class="at">Toronto East/Est</span><span class="st">`</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="st">`</span><span class="at">east_toronto</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">Toronto East/Est</span><span class="st">`</span>, <span class="st">`</span><span class="at">date</span><span class="st">`</span> <span class="ot">=</span> <span class="st">`</span><span class="at">Date</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">year</span>(<span class="fu">ymd</span>(date)),</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">pre_2010 =</span> <span class="fu">ifelse</span>(date <span class="sc">&lt;</span> <span class="dv">2010</span>, <span class="st">"Yes"</span>, <span class="st">"No"</span>),</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">east_toronto =</span> <span class="fu">as.numeric</span>(east_toronto)) <span class="sc">|&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>date) <span class="sc">|&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>() </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>After we created the <code>ontario_gas</code> dataset, let us make sure that we are able to grab the mean gas prices of <code>pre_2010</code>. Notice the output is a 2x2 tibble. It shows us the mean gas prices from the years of 1990 to 2009, and the mean gas prices from the years of 2010 to 2023.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ontario_gas <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(pre_2010) <span class="sc">|&gt;</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_gas =</span> <span class="fu">mean</span>(east_toronto))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  pre_2010 mean_gas
+  &lt;chr&gt;       &lt;dbl&gt;
+1 No          106. 
+2 Yes          63.2</code></pre>
+</div>
+</div>
+<p>From this output, it seems like before 2010, the mean gas price in east was around 63.2 Canadian dollars, and gas prices after 2010 was around 106 Canadian dollars.</p>
+<p>Now that we verified that our new dataset works, let us create a function such that we are able to easily explore the different years and regions within Ontario. However, remember that in this simulation, we are only interested in the regions of West and East Toronto.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mean_ontario_gas <span class="ot">&lt;-</span> <span class="cf">function</span>(gas_vec, year_vec) {</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  mean_tbl <span class="ot">&lt;-</span> </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  ontario_gas <span class="sc">|&gt;</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>({{year_vec}}) <span class="sc">|&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean_gas =</span> <span class="fu">mean</span>({{gas_vec}}))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  observed_diff <span class="ot">&lt;-</span> mean_tbl[[<span class="dv">2</span>]][<span class="dv">1</span>] <span class="sc">-</span> mean_tbl[[<span class="dv">2</span>]][<span class="dv">2</span>]</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Note that the difference in means between the two time periods is 43.10 Canadian dollars. This indicates that after 2010, the gas prices in East Toronto is 43.10 Canadian dollars more expensive than gas prices before the years of 2010.</p>
+<p>Now that we know the actual difference in gas prices, let us run a simulation to see if there is an actual difference in the mean prices between the two time periods. In addition, it will help us in assessing our model’s accuracy. Because real-world scenarios might not adhere to statistical assumptions or distributions, it is important to run statistical analysis to analyse to see if there is a statistical significance. Here, we are running our simulation 1000 times. Note that we need to shuffle the data to see if the results happen by chance, or if there is an actual relationship between the variables.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>simulated_diffs1 <span class="ot">&lt;-</span> <span class="fu">vector</span>(<span class="st">"double"</span>, <span class="dv">1000</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>) {</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  mean_tbl <span class="ot">&lt;-</span> ontario_gas <span class="sc">|&gt;</span> </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">pre_2010 =</span> <span class="fu">sample</span>(pre_2010)) <span class="sc">|&gt;</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(pre_2010) <span class="sc">|&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(<span class="at">mean_gas =</span> <span class="fu">mean</span>(east_toronto))</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  simulated_diffs1[[i]] <span class="ot">&lt;-</span> mean_tbl[[<span class="dv">2</span>]][<span class="dv">1</span>] <span class="sc">-</span> mean_tbl[[<span class="dv">2</span>]][<span class="dv">2</span>]</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Once we have the simulated differences, we need to plot out simulated data against our observed difference. Remember that our observed difference in the mean gas prices is 42.8 Canadian dollars. By plotting a histogram, we are able to compare our simulated data against our observed mean difference.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>null_world <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">simulated_diffs1 =</span> simulated_diffs1)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(null_world, <span class="fu">aes</span>(<span class="at">x =</span> simulated_diffs1)) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>() <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean_ontario_gas</span>(east_toronto, pre_2010), <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Simulated Difference in Gas Prices"</span>,</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"In East Toronto"</span>,</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Simulated Differences"</span>,</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Count"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Mini_Project_2_Simulations_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Note that we plotted the observed difference as the horizontal red line. The histogram represents the values we received when we ran our simulations. Notice how the red line is super far away from our simulated data. This indicates that there is significant evidence that there is a difference between the mean prices of gas prices between the two time periods (pre 2010 and post 2010).</p>
+<p>Now that we ran our simulation and plotted it on a histogram, let us also perform a statistical test to see how accurate our simulation was. Note that because we are interested in the difference of two means, we have to run a t-test.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>t_test_result <span class="ot">&lt;-</span> <span class="fu">t.test</span>(ontario_gas<span class="sc">$</span>east_toronto <span class="sc">~</span> ontario_gas<span class="sc">$</span>pre_2010)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>t_test_result</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    Welch Two Sample t-test
+
+data:  ontario_gas$east_toronto by ontario_gas$pre_2010
+t = 57.486, df = 5829.3, p-value &lt; 2.2e-16
+alternative hypothesis: true difference in means between group No and group Yes is not equal to 0
+95 percent confidence interval:
+ 41.62830 44.56775
+sample estimates:
+ mean in group No mean in group Yes 
+        106.33840          63.24037 </code></pre>
+</div>
+</div>
+<p>From our t-test, we have a p-value of 2.2e-16, which agrees with our results of our simulation. There is significant evidence that there is a difference in the true means of gas prices between the two time periods of post 2010 and pre 2010.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>I was interested in seeing if the ever changing economy affects the prices of consumer goods; in particular, I was interested in seeing if there is a significant difference in the mean gas prices between the time periods of 1990-2019 and 2010-2023. In order to do this, we need to run simulation tests to confirm that the mean prices we observed is not happening by chance, and there is actual statistical evidence that shows the difference in gas prices. Through our analysis, we are able to see that there is a true difference in means between the years of 1990-2009 and 2010-2023. Note that I wrote the function such that we are able to compare any region within Ontario, Canada. The only difference and changes we need to make lies in the for loop function, where we need to specify the region that we are interested in analyzing; otherwise, we are able to analyze the different regions in Ontario quite easily.</p>
+</section>
+<section id="citations" class="level2">
+<h2 class="anchored" data-anchor-id="citations">Citations</h2>
+<p><a href="https://www.kaggle.com/datasets/syedabdulshameer/fuel-prices-in-ontario-1990-2023-eda">Ontario Gas Prices</a></p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     

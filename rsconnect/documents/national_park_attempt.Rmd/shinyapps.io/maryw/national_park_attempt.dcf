@@ -1,0 +1,12 @@
+name: national_park_attempt
+title: national_park_attempt
+username: maryw
+account: maryw
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 17643046
+bundleId: 12324102
+url: https://maryw.shinyapps.io/national_park_attempt/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

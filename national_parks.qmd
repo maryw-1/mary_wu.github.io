@@ -1,0 +1,278 @@
+---
+title: "National Parks"
+output: 
+  flexdashboard::flex_dashboard:
+    vertical_layout: scroll
+    theme: flatly
+runtime: shiny
+---
+
+```{r global, include=FALSE, message=FALSE}
+
+#LIBRARIES
+library(tidyverse)
+library(knitr)
+library(httr)
+library(stringr)
+library(rvest) 
+library(ggplot2)
+library(readr)
+library(dplyr)
+library(maps)
+library(sf)
+library(tidyr)
+library(readr)
+library(shiny)
+library(plotly)
+library(ggridges)
+library(wordcloud)
+library(RColorBrewer)
+library(tidytext)
+library(forcats)
+library(kableExtra)
+
+#OUTSIDE DATA
+
+np_data_from_kaggle_species <- read_csv("species.csv")
+
+np_data_from_kaggle_parks <- read_csv("parks.csv")
+
+#full_states_data <- read_csv("US_GeoCode.csv")
+
+visitation <- read_csv("visitation.csv")
+
+#DATA FROM OUR CREATED CSV
+park_data <- read_csv("park_data.csv")
+
+
+```
+
+# About
+
+#### Authors
+
+Jenna Graff and Mary Wu
+
+#### Background Information
+
+For our final project in Data Science II, we are analyzing data found on the National Parks website, and joining it with other publicly available National Park data. Information we grabbed with the National Parks Service (NPS) API includes activities to do at each park, the address, and location, including coordinates and state. We joined this data set we created with data sets of visitors to each park and species that have been found in each of the parks.
+
+With this project, our goal is to help plan future trips to recreational areas by showing when parks are busy, what there is to do there, their location and size, and fun wildlife that can be seen.
+
+#### Data Sources
+
+All of our sources for this project come from the National Parks Service or Kaggle data sets.
+
+- [API](https://www.nps.gov/subjects/developer/api-documentation.htm)
+- [Joined data set](https://www.kaggle.com/datasets/nationalparkservice/park-biodiversity)
+- [Species](https://www.kaggle.com/datasets/nationalparkservice/park-biodiversity?select=species.csv)
+- [Visitation](https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Public%20Use%20Statistics%20(1979%20-%20Last%20Calendar%20Year))
+
+#### GitHub
+
+Here's a link to our [code](https://github.com/maryw-1/mary_wu.github.io)
+
+```{r  fig.width = 4, fig.height = 6}
+include_graphics("nps_logo.png")
+```
+
+# Activities
+
+```{r, include=FALSE}
+number_of_activities <- park_data |>
+  select(`Park Code`, `Park Name`, activities, State, Acres) |>
+  mutate(n_activities = str_count(activities, ", "), 
+         `number of activities` = n_activities + 1) 
+
+list_of_all_activities <- park_data |> # long list of activities per park
+  mutate(activities =  str_replace_all(activities, " ", "")) |> 
+  select(`Park Code`, activities, State, `Park Name`) |>
+  unnest_tokens(words, activities)
+```
+
+### Number of activities available at every national park - ordered from greatest to least. Hovering on each bar will show more information.
+
+```{r}
+activities_by_park_graph <- list_of_all_activities |> 
+  group_by(`Park Name`, State) |>
+  count() |>
+  ggplot(aes(x = fct_reorder(`Park Name`, n), y = n)) +
+  geom_col(fill = "black") + 
+  coord_flip() +
+  labs(title = "Number of Activities by Park", 
+       y = "Number of Actvities",
+       x = "Park Name")
+
+ggplotly(activities_by_park_graph)
+```
+
+### This histogram shows the distribution of number of activities offered at parks. For each bar, count shows the number of parks that have that average number of activities.
+
+```{r echo = FALSE}
+histogram <- ggplot(number_of_activities, aes(x = `number of activities`)) +
+    geom_histogram(bins = 15,
+                   fill = "white", colour = "black") +
+    labs(title = "Distribution of activity options",
+         y = "Number of parks")
+
+ggplotly(histogram)
+```
+
+### This wordcloud shows 120 popular activities across national parks.
+
+```{r}
+list_of_all_activities |>
+  count(words) |>
+  with(wordcloud(words, n, max.words = 120, 
+                 colors = brewer.pal(8, "Dark2")))
+```
+
+# Maps
+
+### Here is an interactive map that will show park name, address, and acerage when you click on each green dot
+
+```{r}
+library(leaflet)
+
+leaflet() |>
+    addTiles() |>
+    setView(lng = mean(park_data$Longitude), lat = mean(park_data$Latitude), 
+           zoom = 3) |> 
+    addCircleMarkers(data = park_data,
+        lat = ~ Latitude, 
+        lng = ~ Longitude, 
+        popup = ~ paste0("<b>Park: </b>", `Park Name`, "    ", 
+                         "<b>Address: </b>", address, "    ",
+                         "<b>Acres: </b>", Acres),
+        radius = ~ log(Acres / 90),  
+        weight = 1,
+        color = "green")
+```
+
+# Species
+
+### Here is a table showing the most common species sightings across all national parks.
+
+```{r}
+np_data_from_kaggle_species |>
+  filter(`Common Names` != "None") |>
+  group_by(`Common Names`) |>
+  summarize(Sightings = n()) |>
+  slice_max(Sightings, n = 10) |>
+  kable() |>
+  kable_styling()
+```
+
+```{r, include=FALSE}
+np_data_from_kaggle_species |>
+  mutate(Category = fct_lump_n(Category, 7),
+         n_species = n()) |>
+  ggplot() +
+  geom_bar(aes(x = Category))
+```
+
+```{r}
+park_names_for_species <- np_data_from_kaggle_parks |> 
+  select(`Park Name`) |>
+  rename(national_park = `Park Name`)|>
+  rename(ParkName = national_park)
+
+species <- np_data_from_kaggle_species |>
+  group_by(Category, `Park Name`) |>
+  rename(ParkName = `Park Name`) |> 
+  summarize(n_species = n()) 
+
+inputPanel(
+  selectInput("ParkName", label = "National Park:",
+              choices = c(park_names_for_species), selected = "Acadia National Park")
+  )
+```
+
+```{r}
+renderPlot({
+    species |>
+    filter(ParkName == input$ParkName) |>
+    ggplot() +
+    geom_col(aes(x = Category, y = n_species, fill = Category), show.legend = FALSE) +
+    theme(axis.text.x = element_text(angle = 60, hjust = 1)) +
+    labs(y = "number of sightings")
+  })
+```
+
+# Visitation
+
+```{r}
+park_names <- np_data_from_kaggle_parks |> 
+  select(`Park Name`) |>
+  rename(national_park = `Park Name`)|>
+  mutate(national_park = str_replace_all(national_park, " National Park", " NP")) |>
+  rename(ParkName = national_park)
+
+visitation_by_park <- visitation |>
+  group_by(Month, ParkName) |>
+  summarize(total_visitors = sum(RecreationVisits)) 
+```
+
+### This density plot shows how parks in different regions see different quantities of visitors.
+
+```{r}
+visitation |>
+  group_by(Region, Month) |>
+  summarize(total_visitors = sum(RecreationVisits),
+            mean_visitors = mean(RecreationVisits),
+            .groups = "drop") |>
+  ggplot(aes(x = total_visitors, 
+             y = fct_reorder(Region, total_visitors), 
+             fill = fct_reorder(Region, total_visitors))) +
+  geom_density_ridges(alpha = .5, show.legend = FALSE) +
+  labs(title = "Number of visitors to National Parks by region (2023)",
+       x = "Visitors",
+       y = "Region")
+```
+
+### This plot shows the number of visitors among all National Parks in the year 2023.
+
+```{r}
+visitation |>
+  group_by(Month) |>
+  summarize(total_visitors = sum(RecreationVisits))  |>
+  ggplot() +
+  geom_line(aes(x = Month, y = total_visitors)) +
+  labs(title = "Total visits over the year (2023)",
+       y = "Number of visitors")
+```
+
+# Comparing Park Visitation
+
+```{r}
+inputPanel(
+  selectInput("ParkName2", label = "National Park:",
+              choices = c(park_names), selected = "Acadia NP"),
+  selectInput("ParkName3", label = "National Park:",
+              choices = c(park_names), selected = "Arches NP")
+  )
+```
+
+```{r}
+renderPlot({
+    visitation_by_park |>
+    filter(ParkName == input$ParkName2 | ParkName == input$ParkName3) |>
+    ggplot() +
+    geom_line(aes(x = Month, y = total_visitors, color = ParkName)) +
+    labs(x = "Month", y = "Number of Visitors")
+  })
+```
+
+# Conclusions
+
+### Our Findings
+
+Our motivation for this project is exploring the National Parks. We were interested in knowing what one can do at each park, and what the park offers. This sparked our interest in finding out the types of activities offered throughout the park. From the National Parks API, we were able to grab the addresses for each of the state parks, and the list of activities that each park offers. In addition to the basic information that can be pulled from the National Parks website, we were interested in knowing what types of wildlife we would expect to see.
+
+First, with our analysis of activities, we found that The Great Sand Dunes National Park and Preserve has the most number of activities offered, and Haleakala has the least. The distribution of activities at parks looks relatively normal, centered around 30 activities per park. Just a few popular activities we can see from the wordcloud include wildlife watching, hiking, different types of camping, boating, snowshoeing, and the junior ranger program.
+
+With our map, we are able to see where parks are located across the country, and see what is close to us or in states we may want to visit. We are also able to see the size of parks, and which are smaller or larger. Clicking on a park shows the name, exact area, and address if we want to use that information to put into a map and see how far away it is.
+
+On the species tab, we can see the most common species across all parks are various plants and birds. These are likely the species that have a wide range of habitats. With our interactive graph, users are able to input a park they potentially want to visit or are interested in, and can see which types of species are most commonly spotted in that park.
+
+Lastly, we made two visitation tabs. From our first graph we find that the intermountain region sees the most amount of visitors to their national parks. The intermountain region includes parks like Yellowstone NP, Grand Canyon NP, and Zion NP. The region with the least amount of visitors is Alaska, which makes sense, as some of these parks are difficult to get to. For example, Gates of the Arctic National Park and Preserve has no roads to get to it, and if someone wants to visit, they must arrive by plane or hike. Our next graph shows the total number of visits throughout the year. The most popular month to visit a park is in the 7th month, or July. On the comparison tab, our plot is interactive, where the user can pick which parks they want to look at. They show visitation throughout the year. Users can choose a park they might want to visit, planning which time to go based on popular times, or when it would be less busy. The plot allows them to compare two parks at once.
