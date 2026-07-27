@@ -6,4 +6,4 @@ editor_options:
 
 ### Date Science II final project:
 
-[This project is a shiny app that looks at data from the National Parks Service](https://maryw.shinyapps.io/national_parks_shiny/)
+[National Parks](https://maryw.shinyapps.io/national_parks_shiny/)
