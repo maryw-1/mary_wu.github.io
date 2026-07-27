@@ -12,14 +12,16 @@ website:
         text: "Minimum Wage in the United States"
       - file: Mini_Project_2_Simulations.qmd
         text: "Mini Project 2 - Simulations"
-      - file: MNIST_Number_Classification.qmd
-        text: "MNIST Number Classification"
-      - file: collaborative_work.qmd
-        text: "Collaborative Work"
+      - sidebar:collaboration
       - file: other_works.qmd
         text: "Other Works"
-
-
+        
+  sidebar:   
+    - id: collaboration
+      title: "Collaborative Works"
+      contents:
+        - MNIST_Number_Classification.qmd
+        - collaborative_work.qmd
     
     
 
