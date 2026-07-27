@@ -19,16 +19,7 @@ website:
       - file: other_works.qmd
         text: "Other Works"
 
-      
-  sidebar:
-    - id: mini_projects
-      title: "Mini Project 1"
-      contents: 
-        - US_States_and_Minimum_Wage.qmd
-    - id: collaborative_work
-      title: "Collaborative Work"
-      contents: 
-        - nat_park.qmd
+
     
     
 
