@@ -13,7 +13,7 @@ about:
     - text: Email
       href: mailto:mwu71@uic.edu
     - text: Resume
-      href: https://acrobat.adobe.com/id/urn:aaid:sc:US:637617da-785a-42b3-aed5-7ad604410c29
+      href: https://acrobat.adobe.com/id/urn:aaid:sc:US:34ee5ca2-78bd-4f3e-8c83-341a006f6b35
 
 ---
 
